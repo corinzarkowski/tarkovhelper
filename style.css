@@ -1,5 +1,6 @@
 body {
   background-image: url('img/mapselection.png');
+  background-repeat: no-repeat;
   position: fixed;
   height: 100%;
   width: 100%;
@@ -9,9 +10,10 @@ body {
   position: fixed;
   border: none;
   color: white;
-  opacity: 50%;
+  opacity: 0%;
   font-size: 16px;
   cursor: pointer;
+  transition: opacity .15s ease-in-out;
 }
 
 #button-lab {
@@ -36,29 +38,36 @@ body {
 }
 
 #button-factory {
-  left: 39em;
-  top: 12.7em;
-  width: 9.3em;
+  left: 42.5em;
+  top: 30.6em;
+  width: 7em;
+  height: 2.1em;
+}
+
+#button-woods {
+  left: 37.8em;
+  top: 23.3em;
+  width: 6em;
   height: 2.1em;
 }
 
 #button-reserve {
-  left: 39em;
-  top: 12.7em;
-  width: 9.3em;
+  left: 31em;
+  top: 35.85em;
+  width: 7em;
   height: 2.1em;
 }
 
 #button-lighthouse {
-  left: 39em;
-  top: 12.7em;
-  width: 9.3em;
+  left: 29.65em;
+  top: 43.9em;
+  width: 9.6em;
   height: 2.1em;
 }
 
 #button-shoreline {
-  left: 39em;
-  top: 12.7em;
-  width: 9.3em;
+  left: 36.8em;
+  top: 50.2em;
+  width: 8.7em;
   height: 2.1em;
 }

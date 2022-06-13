@@ -7,12 +7,17 @@
     <meta name="author" content="corin zarkowski" />
     <title>tarkov maps</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" rel="stylesheet" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
     <script src="js/jquery.js"></script>
   </head>
 
-  <body>
+  <body id='background'>
     <button class="map-button" id="button-lab"></button>
     <button class="map-button" id="button-interchange"></button>
     <button class="map-button" id="button-customs"></button>
@@ -22,5 +27,57 @@
     <button class="map-button" id="button-lighthouse"></button>
     <button class="map-button" id="button-shoreline"></button>
   </body>
+
+  <script>
+    $( '.map-button' ).on('click', function(e) {
+      $( '.map-button' ).css('visibility', 'hidden')
+      $( 'body' ).css('background-size', 'cover')
+      switch (e.target.id) {
+        case ('button-customs'):
+          $( 'body' ).css('background-image', 'url("img/customs.png")')
+          break;
+        case ('button-lab'):
+          $( 'body' ).css('background-image', 'url("img/lab.png")')
+          break;
+        case ('button-interchange'):
+          $( 'body' ).css('background-image', 'url("img/interchange.png")')
+          break;
+        case ('button-woods'):
+          $( 'body' ).css('background-image', 'url("img/woods.png")')
+          $( 'body' ).css('background-size', '50%')
+          break;
+        case ('button-factory'):
+          $( 'body' ).css('background-image', 'url("img/factory.png")')
+          break;
+        case ('button-reserve'):
+          $( 'body' ).css('background-image', 'url("img/reserve.png")')
+          break;
+        case ('button-lighthouse'):
+          $( 'body' ).css('background-image', 'url("img/lighthouse.png")')
+          break;
+        case ('button-shoreline'):
+          $( 'body' ).css('background-image', 'url("img/shoreline.png")')
+          break;
+        default:
+          break;
+      }
+    });
+
+    $( '.map-button' ).on('mouseenter', function(e) {
+      $( this ).css('opacity', '50%')
+    });
+
+    $( '.map-button' ).on('mouseleave', function(e) {
+      $( this ).css('opacity', '0%')
+    });
+
+    $( 'body' ).on('click', function(e) {
+      if (e.target.id === 'background') {
+        $( 'body' ).css('background-image', 'url("img/mapselection.png")')
+        $( '.map-button' ).css('visibility', 'visible')
+        $( 'body' ).css('background-size', '')
+      }
+    })
+  </script>
 
 </html>
