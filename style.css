@@ -1,3 +1,20 @@
+@font-face {
+  font-family: bender;
+  src: url('fonts/bender.otf');
+}
+
+@font-face {
+  font-family: bender;
+  src: url('fonts/bender_bold.otf');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: bender;
+  src: url('fonts/bender_light.otf');
+  font-weight: lighter;
+}
+
 body {
   background-image: url('img/mapselection.png');
   background-repeat: no-repeat;
@@ -6,7 +23,7 @@ body {
   width: 100%;
 }
 
-.map-button {
+.button-map {
   position: fixed;
   border: none;
   color: white;
@@ -14,6 +31,23 @@ body {
   font-size: 16px;
   cursor: pointer;
   transition: opacity .15s ease-in-out;
+}
+
+.button-back {
+  padding-top: .2em;
+  padding-left: .5em;
+  padding-right: .5em;
+  padding-bottom: .2em;
+  margin-left: .5em;
+  margin-top: .5em;
+  max-width: 2.1em;
+  border: 1px lightgray;
+  background-color: white;
+  opacity: 50%;
+  font-family: bender;
+  font-size: 1.5em;
+  cursor: pointer;
+  visibility: hidden;
 }
 
 #button-lab {

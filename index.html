@@ -15,23 +15,26 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
     <script src="js/jquery.js"></script>
+    <script src="https://unpkg.com/@panzoom/panzoom@4.5.0/dist/panzoom.min.js"></script>
   </head>
 
   <body id='background'>
-    <button class="map-button" id="button-lab"></button>
-    <button class="map-button" id="button-interchange"></button>
-    <button class="map-button" id="button-customs"></button>
-    <button class="map-button" id="button-woods"></button>
-    <button class="map-button" id="button-factory"></button>
-    <button class="map-button" id="button-reserve"></button>
-    <button class="map-button" id="button-lighthouse"></button>
-    <button class="map-button" id="button-shoreline"></button>
+    <div class="button-back" id="back">back</div>
+    <button class="button-map" id="button-lab"></button>
+    <button class="button-map" id="button-interchange"></button>
+    <button class="button-map" id="button-customs"></button>
+    <button class="button-map" id="button-woods"></button>
+    <button class="button-map" id="button-factory"></button>
+    <button class="button-map" id="button-reserve"></button>
+    <button class="button-map" id="button-lighthouse"></button>
+    <button class="button-map" id="button-shoreline"></button>
   </body>
 
   <script>
-    $( '.map-button' ).on('click', function(e) {
-      $( '.map-button' ).css('visibility', 'hidden')
+    $( '.button-map' ).on('click', function(e) {
+      $( '.button-map' ).css('visibility', 'hidden')
       $( 'body' ).css('background-size', 'cover')
+      $( '.button-back' ).css('visibility', 'visible')
       switch (e.target.id) {
         case ('button-customs'):
           $( 'body' ).css('background-image', 'url("img/customs.png")')
@@ -63,20 +66,19 @@
       }
     });
 
-    $( '.map-button' ).on('mouseenter', function(e) {
+    $( '.button-map' ).on('mouseenter', function(e) {
       $( this ).css('opacity', '50%')
     });
 
-    $( '.map-button' ).on('mouseleave', function(e) {
+    $( '.button-map' ).on('mouseleave', function(e) {
       $( this ).css('opacity', '0%')
     });
 
-    $( 'body' ).on('click', function(e) {
-      if (e.target.id === 'background') {
-        $( 'body' ).css('background-image', 'url("img/mapselection.png")')
-        $( '.map-button' ).css('visibility', 'visible')
-        $( 'body' ).css('background-size', '')
-      }
+    $( '.button-back' ).on('click', function(e) {
+      $( '.button-back' ).css('visibility', 'hidden')
+      $( 'body' ).css('background-image', 'url("img/mapselection.png")')
+      $( '.button-map' ).css('visibility', 'visible')
+      $( 'body' ).css('background-size', '')
     })
   </script>
 
