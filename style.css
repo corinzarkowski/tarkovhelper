@@ -15,12 +15,19 @@
   font-weight: lighter;
 }
 
-body {
+.background {
   background-image: url('img/mapselection.png');
   background-repeat: no-repeat;
   position: fixed;
+  top: 0;
+  left: 0;
   height: 100%;
   width: 100%;
+}
+
+.map_img {
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .button-map {

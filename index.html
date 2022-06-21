@@ -18,48 +18,60 @@
     <script src="https://unpkg.com/@panzoom/panzoom@4.5.0/dist/panzoom.min.js"></script>
   </head>
 
-  <body id='background'>
-    <div class="button-back" id="back">back</div>
-    <button class="button-map" id="button-lab"></button>
-    <button class="button-map" id="button-interchange"></button>
-    <button class="button-map" id="button-customs"></button>
-    <button class="button-map" id="button-woods"></button>
-    <button class="button-map" id="button-factory"></button>
-    <button class="button-map" id="button-reserve"></button>
-    <button class="button-map" id="button-lighthouse"></button>
-    <button class="button-map" id="button-shoreline"></button>
+  <body>
+    <div class="background">
+      <div class="button-back" id="back">back</div>
+      <button class="button-map" id="button-lab"></button>
+      <button class="button-map" id="button-interchange"></button>
+      <button class="button-map" id="button-customs"></button>
+      <button class="button-map" id="button-woods"></button>
+      <button class="button-map" id="button-factory"></button>
+      <button class="button-map" id="button-reserve"></button>
+      <button class="button-map" id="button-lighthouse"></button>
+      <button class="button-map" id="button-shoreline"></button>
+    </div>
+    <img src="" id="map_img">
   </body>
 
   <script>
     $( '.button-map' ).on('click', function(e) {
+      // const mapelem = document.getElementById('map_img')
+      // const mapZoom = Panzoom(mapelem, {
+      //   maxScale: 5
+      // })
+      // mapZoom.pan(10, 10)
+      // mapZoom.zoom(1, { animate: true })
+      // mapelem.parentElement.addEventListener('wheel', mapZoom.zoomWithWheel)
       $( '.button-map' ).css('visibility', 'hidden')
-      $( 'body' ).css('background-size', 'cover')
+      $( '.background' ).css('visibility', 'hidden')
       $( '.button-back' ).css('visibility', 'visible')
+      $( '#map_img' ).css('visibility', 'visible')
+      $( '#map_img' ).css('width', '100%')
+      $( '#map_img' ).css('height', 'auto')
       switch (e.target.id) {
         case ('button-customs'):
-          $( 'body' ).css('background-image', 'url("img/customs.png")')
+          $( '#map_img' ).attr("src", "img/customs.png");
           break;
         case ('button-lab'):
-          $( 'body' ).css('background-image', 'url("img/lab.png")')
+          $( '#map_img' ).attr("src", "img/lab.png");
           break;
         case ('button-interchange'):
-          $( 'body' ).css('background-image', 'url("img/interchange.png")')
+          $( '#map_img' ).attr("src", "img/interchange.png");
           break;
         case ('button-woods'):
-          $( 'body' ).css('background-image', 'url("img/woods.png")')
-          $( 'body' ).css('background-size', '50%')
+          $( '#map_img' ).attr("src", "img/woods.png");
           break;
         case ('button-factory'):
-          $( 'body' ).css('background-image', 'url("img/factory.png")')
+          $( '#map_img' ).attr("src", "img/factory.png");
           break;
         case ('button-reserve'):
-          $( 'body' ).css('background-image', 'url("img/reserve.png")')
+          $( '#map_img' ).attr("src", "img/reserve.png");
           break;
         case ('button-lighthouse'):
-          $( 'body' ).css('background-image', 'url("img/lighthouse.png")')
+          $( '#map_img' ).attr("src", "img/lighthouse.png");
           break;
         case ('button-shoreline'):
-          $( 'body' ).css('background-image', 'url("img/shoreline.png")')
+          $( '#map_img' ).attr("src", "img/shoreline.png");
           break;
         default:
           break;
@@ -76,9 +88,8 @@
 
     $( '.button-back' ).on('click', function(e) {
       $( '.button-back' ).css('visibility', 'hidden')
-      $( 'body' ).css('background-image', 'url("img/mapselection.png")')
+      $( '.background' ).css('visibility', 'visible')
       $( '.button-map' ).css('visibility', 'visible')
-      $( 'body' ).css('background-size', '')
     })
   </script>
 
