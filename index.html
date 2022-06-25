@@ -34,8 +34,12 @@
   <script>
     $( '.button-map' ).on('click', function(e) {
       var loc = window.location;
-      var newLoc = '/map.html?mapname=' + e.target.id;
-      window.location = newLoc;
+      var newLoc = loc.pathname + '/map.html?mapname=' + e.target.id;
+      if (loc.pathname === '/') {
+        newLoc = '/map.html?mapname=' + e.target.id;
+      }
+      console.log(newLoc)
+      // window.location = newLoc;
     });
 
     $( '.button-map' ).on('mouseenter', function(e) {
