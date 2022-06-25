@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="tarkov maps" />
+    <meta name="author" content="corin zarkowski" />
+    <title>tarkov map</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <script src="js/jquery.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+          integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+            integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin=""></script>
+  </head>
+
+  <body>
+    <div id="map"></div>
+    <button class="button-back">back</button>
+  </body>
+
+  <script>
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const mapName = urlParams.get('mapname');
+
+    document.title = mapName;
+
+    var bounds;
+    var img;
+    var zoom = -.5;
+
+    switch (mapName) {
+      case 'lab':
+        bounds = [[0,0], [1019, 1600]];
+        img = 'img/lab.png';
+        break;
+      case 'interchange':
+        bounds = [[0,0], [1792, 3312]];
+        img = 'img/interchange.png';
+        zoom = -1
+        break;
+      case 'customs':
+        bounds = [[0,0], [930, 1920]];
+        img = 'img/customs.png';
+        break;
+      case 'woods':
+        bounds = [[0,0], [2000, 2000]];
+        img = 'img/woods.png';
+        zoom = -1;
+        break;
+      case 'factory':
+        bounds = [[0,0], [1080, 1920]];
+        img = 'img/factory.png';
+        zoom = -.6;
+        break;
+      case 'reserve':
+        bounds = [[0,0], [1080, 1920]];
+        img = 'img/reserve.png';
+        break;
+      case 'lighthouse':
+        bounds = [[0,0], [1080, 1920]];
+        img = 'img/lighthouse.png';
+        break;
+      case 'shoreline':
+        bounds = [[0,0], [1080, 1920]];
+        img = 'img/shoreline.png';
+        break;
+      default:
+        break;
+    }
+
+
+    var map = L.map('map', {
+      crs: L.CRS.Simple,
+      minZoom: zoom,
+      zoomSnap: .25
+    });
+
+    var image = L.imageOverlay(img, bounds).addTo(map);
+    map.fitBounds(bounds);
+
+    $( '.button-back' ).on('mouseenter', function(e) {
+      $( this ).css('opacity', '80%')
+      $( this ).css('border', '2px solid black')
+    });
+
+    $( '.button-back' ).on('mouseleave', function(e) {
+      $( this ).css('opacity', '50%')
+      $( this ).css('border', '1px solid black')
+    });
+
+    $( '.button-back' ).on('click', function(e) {
+      window.location = '/'
+    });
+  </script>
+
+</html>

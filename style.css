@@ -15,6 +15,12 @@
   font-weight: lighter;
 }
 
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 .background {
   background-image: url('img/mapselection.png');
   background-repeat: no-repeat;
@@ -41,74 +47,79 @@
 }
 
 .button-back {
-  padding-top: .2em;
-  padding-left: .5em;
-  padding-right: .5em;
-  padding-bottom: .2em;
-  margin-left: .5em;
-  margin-top: .5em;
-  max-width: 2.1em;
-  border: 1px lightgray;
+  position: absolute;
+  top: .8em;
+  left: 3em;
+  padding: 10px;
+  z-index: 400;
+  border: 1px solid black;
   background-color: white;
   opacity: 50%;
   font-family: bender;
   font-size: 1.5em;
   cursor: pointer;
-  visibility: hidden;
 }
 
-#button-lab {
+#lab {
   left: 39em;
   top: 12.7em;
   width: 9.3em;
   height: 2.1em;
 }
 
-#button-interchange {
+#interchange {
   left: 55.9em;
   top: 20.5em;
   width: 10.8em;
   height: 2.1em;
 }
 
-#button-customs {
+#customs {
   left: 52.3em;
   top: 24.7em;
   width: 7.6em;
   height: 2.1em;
 }
 
-#button-factory {
+#factory {
   left: 42.5em;
   top: 30.6em;
   width: 7em;
   height: 2.1em;
 }
 
-#button-woods {
+#woods {
   left: 37.8em;
   top: 23.3em;
   width: 6em;
   height: 2.1em;
 }
 
-#button-reserve {
+#reserve {
   left: 31em;
   top: 35.85em;
   width: 7em;
   height: 2.1em;
 }
 
-#button-lighthouse {
+#lighthouse {
   left: 29.65em;
   top: 43.9em;
   width: 9.6em;
   height: 2.1em;
 }
 
-#button-shoreline {
+#shoreline {
   left: 36.8em;
   top: 50.2em;
   width: 8.7em;
   height: 2.1em;
+}
+
+#map {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
 }
