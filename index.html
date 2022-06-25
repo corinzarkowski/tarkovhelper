@@ -34,10 +34,7 @@
   <script>
     $( '.button-map' ).on('click', function(e) {
       var loc = window.location;
-      var newLoc = loc.pathname + '/map.html?mapname=' + e.target.id;
-      if (loc.pathname === '/') {
-        newLoc = '/map.html?mapname=' + e.target.id;
-      }
+      var newLoc = loc.pathname + 'map.html?mapname=' + e.target.id;
       window.location = newLoc;
     });
 

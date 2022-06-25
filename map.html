@@ -77,7 +77,6 @@
         break;
     }
 
-
     var map = L.map('map', {
       crs: L.CRS.Simple,
       minZoom: zoom,
@@ -98,7 +97,12 @@
     });
 
     $( '.button-back' ).on('click', function(e) {
-      window.location = '/';
+      var loc = window.location;
+      if (loc.pathname.includes('tarkovhelper')) {
+        window.location = '/tarkovhelper';
+      } else {
+        window.location = '/'
+      }
     });
   </script>
 
