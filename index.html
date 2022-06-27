@@ -46,9 +46,12 @@
       $( this ).css('opacity', '0%')
     });
 
+    var quest_data;
     $.getJSON('quest_data.json', function(data) {
-      console.log(data);
+      quest_data = data;
     });
+
+    
   </script>
 
 </html>
