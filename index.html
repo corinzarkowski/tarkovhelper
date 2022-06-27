@@ -45,6 +45,10 @@
     $( '.button-map' ).on('mouseleave', function(e) {
       $( this ).css('opacity', '0%')
     });
+
+    $.getJSON('quest_data.json', function(data) {
+      console.log(data);
+    });
   </script>
 
 </html>
